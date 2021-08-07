@@ -1,0 +1,113 @@
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --first-color: #1a73e8;
+    --input-color: #80868b;
+    --border-color: #dadce0;
+
+    --body-font: 'Roboto', sans-serif;
+    --normal-font-size: 1.4rem;
+    --small-font-size: 1.2rem;
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size); 
+}
+
+.container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    min-height: 50rem;
+    max-width: 85%;
+    margin: auto;
+}
+
+.login {
+    width: 40rem;
+    padding: 5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .2);
+}
+
+.login__title {
+    margin-bottom: 3rem;
+}
+
+.login__container {
+    position: relative;
+    height: 5.8rem;
+    margin-bottom: 3rem;
+}
+
+.login__field {
+    width: 100%;
+    height: 100%;
+    padding-left: 2.5rem;
+    border-radius: .5rem;
+    border: none;
+    border: .2rem solid var(--border-color);
+    outline: none;
+    transition: all .3s ease;
+}
+
+.login__field:focus {
+    border: .2rem solid var(--first-color);
+}
+
+.login__label {
+    color: var(--input-color);
+    position: absolute;
+    top: 50%;
+    left: 2.5rem;
+    transform: translateY(-50%);
+    cursor: text;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.login__submit {
+    background: var(--first-color);
+    color: #fff;
+    display: block;
+    margin-left: auto;
+    padding: 1.5rem 4rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.login__submit:hover {
+    box-shadow: 0 1rem 3.6rem rgba(0, 0, 0, .15);
+}
+
+/* Input Focus */
+
+.login__field:focus + .login__label {
+    background: #fff;
+    padding: 0 .8rem;
+    position: absolute;
+    top: -.2rem;
+    left: 1rem;
+    font-size: var(--small-font-size);
+}
+
+.login__field:not(:placeholder-shown) + .login__label{
+    background: #fff;
+    padding: 0 .8rem;
+    position: absolute;
+    top: -.2rem;
+    left: 1rem;
+    font-size: var(--small-font-size);
+}
